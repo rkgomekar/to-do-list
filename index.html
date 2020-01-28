@@ -4,6 +4,7 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <script src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
 </head>
 
 <body>
@@ -12,17 +13,17 @@
 
         <form name="todoForm" ng-submit="onTodoAdd()" novalidate>
             <input type="text" name="todoInput" ng-model="todoInput" placeholder="Add new to-do here"
-                ng-required="true" />
-            <button type="submit" class="btn btn-primary" ng-disabled="todoForm.$invalid">Add</button> <br />
-            <span ng-show="todoForm.todoInput.$touched && todoForm.todoInput.$error.required">Title is
-                required</span><br /><br />
-
+                ng-required="true" autocomplete="off" />
+            <button type="submit" ng-disabled="todoForm.$invalid" class="btn-add">Add</button> <br />
+            <span ng-show="todoForm.todoInput.$touched && todoForm.todoInput.$error.required" class="error">Title is required</span>
+            <br /><br />
         </form>
 
         <div ng-repeat="todo in todoList">
             <input type="checkbox" ng-model="todo.done">
             <span>{{todo.title}}</span>
         </div>
+
         <br />
         <button ng-click="deleteTodo()">Delete selected</button>
 

@@ -14,8 +14,9 @@
         <form name="todoForm" ng-submit="onTodoAdd()" novalidate>
             <input type="text" name="todoInput" ng-model="todoInput" placeholder="Add new to-do here"
                 ng-required="true" autocomplete="off" />
-            <button type="submit" ng-disabled="todoForm.$invalid" class="btn-add">Add</button> <br />
-            <span ng-show="todoForm.todoInput.$touched && todoForm.todoInput.$error.required" class="error">Title is required</span>
+            <button type="submit" ng-disabled="todoForm.$invalid">Add</button> <br />
+            <span ng-show="todoForm.todoInput.$touched && todoForm.todoInput.$error.required" 
+            class="error">Title is required</span>
             <br /><br />
         </form>
 
